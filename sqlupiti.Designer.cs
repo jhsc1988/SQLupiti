@@ -29,19 +29,19 @@ namespace SQLupiti
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbQuery = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.getResult = new System.Windows.Forms.Button();
+            this.queryResult = new System.Windows.Forms.TextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbQuery
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(700, 27);
-            this.textBox1.TabIndex = 0;
+            this.tbQuery.Location = new System.Drawing.Point(49, 96);
+            this.tbQuery.Name = "tbQuery";
+            this.tbQuery.Size = new System.Drawing.Size(700, 27);
+            this.tbQuery.TabIndex = 0;
             // 
             // label1
             // 
@@ -53,33 +53,35 @@ namespace SQLupiti
             this.label1.Text = "Enter SQL Query:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // getResult
             // 
-            this.button1.Location = new System.Drawing.Point(655, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Get result";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.getResult.Location = new System.Drawing.Point(655, 146);
+            this.getResult.Name = "getResult";
+            this.getResult.Size = new System.Drawing.Size(94, 29);
+            this.getResult.TabIndex = 2;
+            this.getResult.Text = "Get result";
+            this.getResult.UseVisualStyleBackColor = true;
+            this.getResult.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // queryResult
             // 
-            this.textBox2.Location = new System.Drawing.Point(49, 197);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(700, 281);
-            this.textBox2.TabIndex = 3;
+            this.queryResult.Location = new System.Drawing.Point(49, 197);
+            this.queryResult.Multiline = true;
+            this.queryResult.Name = "queryResult";
+            this.queryResult.ReadOnly = true;
+            this.queryResult.Size = new System.Drawing.Size(700, 281);
+            this.queryResult.TabIndex = 3;
+            this.queryResult.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // sqlupiti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 539);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.queryResult);
+            this.Controls.Add(this.getResult);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbQuery);
             this.Name = "sqlupiti";
             this.Text = "SQLUpiti";
             this.ResumeLayout(false);
@@ -89,10 +91,10 @@ namespace SQLupiti
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbQuery;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button getResult;
+        private System.Windows.Forms.TextBox queryResult;
         private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
