@@ -69,6 +69,7 @@ namespace SQLupiti
             this.queryResult.Multiline = true;
             this.queryResult.Name = "queryResult";
             this.queryResult.ReadOnly = true;
+            this.queryResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.queryResult.Size = new System.Drawing.Size(700, 281);
             this.queryResult.TabIndex = 3;
             this.queryResult.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -84,6 +85,7 @@ namespace SQLupiti
             this.Controls.Add(this.tbQuery);
             this.Name = "sqlupiti";
             this.Text = "SQLUpiti";
+            this.Load += new System.EventHandler(this.sqlupiti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

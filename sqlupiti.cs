@@ -33,8 +33,6 @@ namespace SQLupiti
                 SqlCommand cmd = new SqlCommand(tbQuery.Text,connection);
 
                 connection.Open();
-                MessageBox.Show("Connection Open!");
-
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<string> str = new List<string>();
@@ -65,6 +63,11 @@ namespace SQLupiti
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sqlupiti_Load(object sender, EventArgs e)
         {
 
         }
