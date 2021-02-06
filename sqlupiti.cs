@@ -14,11 +14,6 @@ namespace SQLupiti
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -47,7 +42,7 @@ namespace SQLupiti
                 connection.Close();
                 reader.Close();
             }
-            catch(InvalidOperationException ioeEx)
+            catch (InvalidOperationException ioeEx)
             {
                 MessageBox.Show(ioeEx.Message);
             }
@@ -55,15 +50,6 @@ namespace SQLupiti
             {
                 MessageBox.Show(sqlEx.Message);
             }
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sqlupiti_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

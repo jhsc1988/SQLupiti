@@ -51,7 +51,6 @@ namespace SQLupiti
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Enter SQL Query:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // getResult
             // 
@@ -72,7 +71,6 @@ namespace SQLupiti
             this.queryResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.queryResult.Size = new System.Drawing.Size(700, 281);
             this.queryResult.TabIndex = 3;
-            this.queryResult.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // sqlupiti
             // 
@@ -85,7 +83,6 @@ namespace SQLupiti
             this.Controls.Add(this.tbQuery);
             this.Name = "sqlupiti";
             this.Text = "SQLUpiti";
-            this.Load += new System.EventHandler(this.sqlupiti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
