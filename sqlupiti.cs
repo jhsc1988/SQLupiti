@@ -16,14 +16,16 @@ namespace SQLupiti
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection connection = null;
+            SqlDataReader reader = null;
             try
             {
-                SqlConnection connection = new SqlConnection(connetionString);
+                connection = new SqlConnection(connetionString);
                 SqlCommand cmd = new SqlCommand(tbQuery.Text, connection);
 
                 connection.Open();
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
                 StringBuilder sb = new StringBuilder();
 
                 int fieldCount = reader.FieldCount;
@@ -37,10 +39,7 @@ namespace SQLupiti
                     sb.Append("\r\n");
                 }
 
-                queryResult.Text += sb.ToString();
-
-                connection.Close();
-                reader.Close();
+                queryResult.Text += sb.ToString()
             }
             catch (InvalidOperationException ioeEx)
             {
@@ -49,6 +48,13 @@ namespace SQLupiti
             catch (SqlException sqlEx)
             {
                 MessageBox.Show(sqlEx.Message);
+            }
+            finally
+            {
+                if(connection != null)
+                    connection.Close();
+                if(reader != null)
+                    reader.Close();
             }
         }
     }
