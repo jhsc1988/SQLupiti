@@ -38,7 +38,7 @@ namespace SQLupiti
             // 
             // tbQuery
             // 
-            this.tbQuery.Location = new System.Drawing.Point(49, 96);
+            this.tbQuery.Location = new System.Drawing.Point(49, 86);
             this.tbQuery.Name = "tbQuery";
             this.tbQuery.Size = new System.Drawing.Size(700, 27);
             this.tbQuery.TabIndex = 0;

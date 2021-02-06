@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text;
+using System.Windows.Forms;
 
 namespace SQLupiti
 {
@@ -30,38 +24,38 @@ namespace SQLupiti
             try
             {
                 SqlConnection connection = new SqlConnection(connetionString);
-                SqlCommand cmd = new SqlCommand(tbQuery.Text,connection);
+                SqlCommand cmd = new SqlCommand(tbQuery.Text, connection);
 
                 connection.Open();
 
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<string> str = new List<string>();
+                StringBuilder sb = new StringBuilder();
 
                 int fieldCount = reader.FieldCount;
+
                 while (reader.Read())
                 {
-                    int i = 0;
-                    while (i < fieldCount)
+                    for (int i = 0; i < fieldCount; ++i)
                     {
-                        str.Add(reader.GetValue(i).ToString() + " ");
-                        i++;
+                        sb.Append(reader.GetValue(i).ToString() + " ");
                     }
-                    str.Add("\r\n");
-                    
+                    sb.Append("\r\n");
                 }
-                foreach (string qR in str)
-                {
-                    queryResult.Text += qR;
-                }
+
+                queryResult.Text += sb.ToString();
+
                 connection.Close();
                 reader.Close();
-
-            } catch (Exception ex)
+            }
+            catch(InvalidOperationException ioeEx)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ioeEx.Message);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message);
             }
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
