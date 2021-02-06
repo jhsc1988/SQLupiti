@@ -39,7 +39,7 @@ namespace SQLupiti
                     sb.Append("\r\n");
                 }
 
-                queryResult.Text += sb.ToString()
+                queryResult.Text += sb.ToString();
             }
             catch (InvalidOperationException ioeEx)
             {
